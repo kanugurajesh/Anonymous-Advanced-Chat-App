@@ -5,3 +5,20 @@
 body {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.2)), url("./public/chat-background.jpg");
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #121212;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #242424;
+}

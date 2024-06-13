@@ -1,19 +1,16 @@
-// import Login from "./pages/login/Login";
-
-// import Login from "./pages/login/Login";
-import MessageContainer from "./components/messages/MessageContainer";
-// import Home from "./pages/home/Home";
-// import Signup from "./pages/signup/Signup";
-// import Start from "./pages/start/Start";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
 
 function App() {
   return (
     <div className="h-screen w-screen flex items-center justify-center">
-      {/* <Start /> */}
-      {/* <Login /> */}
-      {/* <Signup /> */}
-      {/* <Home /> */}
-      <MessageContainer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </div>
   );
 }
