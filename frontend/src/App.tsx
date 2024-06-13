@@ -1,7 +1,8 @@
 // import Login from "./pages/login/Login";
 
 // import Login from "./pages/login/Login";
-import Home from "./pages/home/Home";
+import MessageContainer from "./components/messages/MessageContainer";
+// import Home from "./pages/home/Home";
 // import Signup from "./pages/signup/Signup";
 // import Start from "./pages/start/Start";
 
@@ -11,7 +12,8 @@ function App() {
       {/* <Start /> */}
       {/* <Login /> */}
       {/* <Signup /> */}
-      <Home />
+      {/* <Home /> */}
+      <MessageContainer />
     </div>
   );
 }
