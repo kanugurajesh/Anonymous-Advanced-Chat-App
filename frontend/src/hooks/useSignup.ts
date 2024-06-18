@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useAuthContext } from "../context/AuthContext";
 
 interface InputTypes {
   fullName: string;
@@ -11,6 +12,8 @@ interface InputTypes {
 
 const useSignUp = () => {
   const [loading, setLoading] = useState<boolean>(false);
+  // @ts-ignore
+  const { setAuthUser } = useAuthContext();
 
   const signup = async ({
     fullName,
@@ -54,6 +57,9 @@ const useSignUp = () => {
         throw new Error(data.error);
       }
       toast.success("Sign up successful!");
+      // localstorage
+      localStorage.setItem("chat-user", JSON.stringify(data));
+      setAuthUser(data);
       return data;
     } catch (error: any) {
       toast.error(error.message);
