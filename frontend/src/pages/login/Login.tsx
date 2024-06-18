@@ -4,9 +4,8 @@ function Login() {
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 flex flex-col gap-4 items-center">
-        <h1 className="text-2xl font-extrabold text-center text-white tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+        <h1 className="text-2xl font-extrabold text-center mb-3 tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
           Login
-          <span className="text-blue-500"></span>
         </h1>
         <form action="" className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
