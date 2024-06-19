@@ -49,7 +49,8 @@ const useSignUp = () => {
 
       if (!res.ok) {
         const errorData = await res.json();
-        throw new Error(errorData.message || "Failed to sign up");
+        console.log(errorData)
+        throw new Error(errorData.error || "Failed to sign up");
       }
 
       const data = await res.json();

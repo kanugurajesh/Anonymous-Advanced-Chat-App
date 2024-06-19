@@ -18,7 +18,7 @@ export const signUp = async (req: Request, res: Response) => {
 
     // if the user is already present then we return error
     if (user) {
-      return res.status(400).json({ error: "Username already exists" });
+      return res.status(400).json({ error: "User already exists" });
     }
 
     // HASH PASSWORD HERE
