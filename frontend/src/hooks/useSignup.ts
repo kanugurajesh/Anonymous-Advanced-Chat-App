@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useAuthContext } from "../context/AuthContext";
 
+// Adding types for signup details
 interface InputTypes {
   fullName: string;
   userName: string;
@@ -49,7 +50,7 @@ const useSignUp = () => {
 
       if (!res.ok) {
         const errorData = await res.json();
-        console.log(errorData)
+        console.log(errorData);
         throw new Error(errorData.error || "Failed to sign up");
       }
 
@@ -58,7 +59,7 @@ const useSignUp = () => {
         throw new Error(data.error);
       }
       toast.success("Sign up successful!");
-      // localstorage
+      // storing jwt in localstorage
       localStorage.setItem("chat-user", JSON.stringify(data));
       setAuthUser(data);
       return data;
@@ -75,6 +76,7 @@ const useSignUp = () => {
 
 export default useSignUp;
 
+// The below code is used to handle the input errors
 const handleInputErrors = ({
   fullName,
   userName,

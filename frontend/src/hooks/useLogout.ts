@@ -10,6 +10,7 @@ const useLogout = () => {
   const logout = async () => {
     setLoading(true);
     toast.loading("logging out...");
+    
     try {
       const res = await fetch("/api/auth/logout", {
         method: "POST",
@@ -19,8 +20,13 @@ const useLogout = () => {
       if (data.error) {
         throw new Error(data.error);
       }
+
+      // removing the jwt token from the localstorage
       localStorage.removeItem("chat-user");
       setAuthUser(null);
+
+      toast.dismiss();
+      toast.success("user logged out successfully");
     } catch (error) {
       toast.dismiss();
       // @ts-ignore

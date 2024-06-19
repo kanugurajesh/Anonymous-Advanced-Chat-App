@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GenderCheckbox from "./GenderCheckbox";
 import { Link } from "react-router-dom";
 import useSignUp from "../../hooks/useSignup";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
-  // @ts-ignore
   const { loading, signup } = useSignUp();
+
+  // The below parameters are used for testing
+  // const { signup } = useSignUp();
+  // let loading = true;
+
+  // The below useeffect manages the toast loading
+  useEffect(() => {
+    if (loading) {
+      toast.dismiss();
+      toast.loading("Signing up...");
+    } else {
+      toast.dismiss();
+    }
+  }, [loading]);
 
   const [input, setInput] = useState({
     fullName: "",
@@ -105,9 +119,10 @@ const SignUp = () => {
           </Link>
           <button
             type="submit"
-            className="bg-blue-500 p-2 rounded-md font-bold text-white border-2 border-blue-500 hover:bg-white hover:text-blue-500 transition-all duration-300 ease-in-out tracking-wide"
+            className={`bg-blue-500 p-2 rounded-md font-bold text-white border-2 border-blue-500 hover:bg-white hover:text-blue-500 transition-all duration-300 ease-in-out tracking-wide`}
+            disabled={loading}
           >
-            Sign Up
+            {loading ? <p>loading...</p> : <p>Sign Up</p>}
           </button>
         </form>
       </div>
