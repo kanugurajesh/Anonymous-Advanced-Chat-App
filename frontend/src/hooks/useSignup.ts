@@ -34,6 +34,7 @@ const useSignUp = () => {
     if (!success) return false;
 
     setLoading(true);
+    toast.loading("signing up...");
 
     try {
       const res = await fetch("/api/auth/signup", {
@@ -58,12 +59,14 @@ const useSignUp = () => {
       if (data.error) {
         throw new Error(data.error);
       }
+      toast.dismiss();
       toast.success("Sign up successful!");
       // storing jwt in localstorage
       localStorage.setItem("chat-user", JSON.stringify(data));
       setAuthUser(data);
       return data;
     } catch (error: any) {
+      toast.dismiss();
       toast.error(error.message);
       return null;
     } finally {

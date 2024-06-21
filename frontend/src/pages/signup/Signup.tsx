@@ -1,26 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GenderCheckbox from "./GenderCheckbox";
 import { Link } from "react-router-dom";
 import useSignUp from "../../hooks/useSignup";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const SignUp = () => {
   const { loading, signup } = useSignUp();
 
-  // The below parameters are used for testing
-  // const { signup } = useSignUp();
-  // let loading = true;
-
-  // The below useeffect manages the toast loading
-  useEffect(() => {
-    if (loading) {
-      toast.dismiss();
-      toast.loading("Signing up...");
-    } else {
-      toast.dismiss();
-    }
-  }, [loading]);
-
+  // states
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showPassword1, setShowPassword1] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const [input, setInput] = useState({
     fullName: "",
     userName: "",
@@ -28,8 +18,6 @@ const SignUp = () => {
     confirmPassword: "",
     gender: "",
   });
-
-  const [error, setError] = useState<string | null>(null);
 
   const handleCheckboxChange = (gender: string) => {
     setInput({ ...input, gender });
@@ -83,29 +71,74 @@ const SignUp = () => {
             <label htmlFor="" className="font-semibold">
               <span>Password</span>
             </label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              required
-              className="rounded-md p-2 px-6 outline-none font-semibold"
-              value={input.password}
-              onChange={(e) => setInput({ ...input, password: e.target.value })}
-            />
+            <div className="relative">
+              <input
+                type={`${showPassword ? "text" : "password"}`}
+                placeholder="Enter Password"
+                required
+                minLength={6}
+                className="rounded-md p-2 px-6 pr-10 outline-none font-semibold"
+                value={input.password}
+                onChange={(e) =>
+                  setInput({ ...input, password: e.target.value })
+                }
+              />
+              {showPassword ? (
+                <img
+                  src="/hide.png"
+                  alt="hide"
+                  className="absolute top-[10px] right-3"
+                  width={21}
+                  height={21}
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+              ) : (
+                <img
+                  src="/view.png"
+                  alt="show"
+                  className="absolute top-[10px] right-3"
+                  width={21}
+                  height={21}
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+              )}
+            </div>
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="" className="font-semibold">
               <span>Confirm Password</span>
             </label>
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              required
-              className="rounded-md p-2 px-6 outline-none font-semibold"
-              value={input.confirmPassword}
-              onChange={(e) =>
-                setInput({ ...input, confirmPassword: e.target.value })
-              }
-            />
+            <div className="relative">
+              <input
+                type={`${showPassword1 ? "text" : "password"}`}
+                placeholder="Confirm Password"
+                required
+                className="rounded-md p-2 px-6 pr-10 outline-none font-semibold"
+                value={input.confirmPassword}
+                onChange={(e) =>
+                  setInput({ ...input, confirmPassword: e.target.value })
+                }
+              />
+              {showPassword1 ? (
+                <img
+                  src="/hide.png"
+                  alt="hide"
+                  className="absolute top-[10px] right-3"
+                  width={21}
+                  height={21}
+                  onClick={() => setShowPassword1(!showPassword1)}
+                />
+              ) : (
+                <img
+                  src="/view.png"
+                  alt="show"
+                  className="absolute top-[10px] right-3"
+                  width={21}
+                  height={21}
+                  onClick={() => setShowPassword1(!showPassword1)}
+                />
+              )}
+            </div>
           </div>
           <GenderCheckbox
             onCheckboxChange={handleCheckboxChange}

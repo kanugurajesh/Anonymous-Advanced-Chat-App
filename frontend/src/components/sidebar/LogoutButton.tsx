@@ -4,10 +4,6 @@ import useLogout from "../../hooks/useLogout";
 const LogoutButton = () => {
   const { loading, logout } = useLogout();
 
-  // The below one's are used for testing
-  // const { logout } = useLogout();
-  // let loading = true;
-
   return (
     <>
       {loading ? (
