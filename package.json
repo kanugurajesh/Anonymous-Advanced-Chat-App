@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "backend/server.ts",
   "scripts": {
-    "build": "npx tsc",
     "start": "node dist/server.js",
-    "dev": "nodemon backend/server.ts"
+    "server": "nodemon backend/server.ts",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "type": "commonjs",
   "keywords": [],
