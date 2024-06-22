@@ -26,7 +26,9 @@ app.use("/api/users", userRouter);
 app.use(express.static(path.join(path.resolve(), "/frontend/dist")));
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+  res.sendFile(
+    path.join(path.join(path.resolve(), "frontend", "dist", "index.html"))
+  );
 });
 
 server.listen(port, () => {
