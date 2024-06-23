@@ -36,7 +36,7 @@ export const SocketContextProvider: React.FC<SocketContextProviderProps> = ({
   //   @ts-ignore
   useEffect(() => {
     if (authUser) {
-      const socketInstance = io("https://anonymous-advanced-chat-app.onrender.com/", {
+      const socketInstance = io("http://localhost:5000", {
         query: {
           userId: authUser._id,
         },

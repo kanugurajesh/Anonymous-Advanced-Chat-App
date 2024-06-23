@@ -26,9 +26,7 @@ app.use("/api/users", userRouter);
 app.use(express.static(path.join(path.resolve(), "/frontend/dist")));
 
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile(
-    path.join(path.join(path.resolve(), "frontend", "dist", "index.html"))
-  );
+  res.send(path.join(path.resolve(), "frontend", "dist", "index.html"));
 });
 
 server.listen(port, () => {
