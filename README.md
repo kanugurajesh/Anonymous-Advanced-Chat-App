@@ -39,3 +39,14 @@ I have made user friendly UI which makes it easier to use the application
 5. npm run server
 6. go to https://localhost:5000 and start experiencing the app
 ```
+
+## Tech Stack
+
+1. MongoDB
+2. React.js
+3. Express
+4. Node.js
+5. Typescript
+6. Socket.io
+7. JWT
+8. TailwindCSS
