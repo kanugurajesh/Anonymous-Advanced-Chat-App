@@ -28,3 +28,14 @@ I have made user friendly UI which makes it easier to use the application
 <img src="https://github.com/kanugurajesh/Anonymous-Advanced-Chat-App/assets/77529419/f33d37bd-e556-417b-9fdb-2c38e068eef2" alt="" />
 
 <img src="https://github.com/kanugurajesh/Anonymous-Advanced-Chat-App/assets/77529419/e2a9a1d7-29a6-46e9-9be5-6a32eef042e9" alt="" />
+
+## Project Setup
+
+```
+1. fork the repository
+2. clone the repo from your github
+3. cp .env.example .env
+4. npm run build
+5. npm run server
+6. go to https://localhost:5000 and start experiencing the app
+```
