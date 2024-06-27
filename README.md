@@ -33,6 +33,10 @@ I have used JWT for security which makes it more secure to store data
 
 <img src="https://github.com/kanugurajesh/Anonymous-Advanced-Chat-App/assets/77529419/e2a9a1d7-29a6-46e9-9be5-6a32eef042e9" alt="" />
 
+## Demo
+
+[![Chat App](https://img.youtube.com/vi/yyHgVMsCPHU/0.jpg)](https://www.youtube.com/watch?v=yyHgVMsCPHU)
+
 ## Project Setup
 
 ```
