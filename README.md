@@ -1,4 +1,5 @@
 # Cipher
+
 🌟 star this repo if you like it
 
 <div align="center">
@@ -7,7 +8,7 @@
 
 ## Project Moto
 
-An Advanced chat application which provides a dynamic chat experience between different users
+An Advanced user friendly chat application which provides a dynamic chat experience between different users.
 
 ## Features
 
