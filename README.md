@@ -18,6 +18,9 @@ This application contains robust authentication which prevents unauthorised user
 ### 2. UI-UX
 I have made user friendly UI which makes it easier to use the application
 
+### 3. JWT
+I have used JWT for security which makes it more secure to store data
+
 ## Screenshots
 
 <img src="https://github.com/kanugurajesh/Anonymous-Advanced-Chat-App/assets/77529419/594714bb-8e56-4397-8fdb-d2de25f1b559" alt="" />
